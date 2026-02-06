@@ -1,0 +1,302 @@
+@use "../abstract/index" as *;
+
+// Styles pour les icônes de cœur
+ion-icon[name="heart"] {
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  
+  &.white {
+    color: $white;
+  }
+  
+  &.red {
+    color: #EF4444; // Rouge vif
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Styles pour les boutons contenant les cœurs
+button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  position: relative;
+  .search-wrapper {
+    background: $texte;
+    padding: 8px 20px;
+    box-shadow: 0 10px 40px $black;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 2rem;
+    border-radius: $border;
+    color: $sous-texte;
+    gap: 10px;
+    @include tangerine-regular();
+
+    ion-icon {
+      margin-left: 10px;
+    }
+    #searchInput {
+      height: 100%;
+
+      background: $texte;
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 12px 0;
+      color: $black;
+    }
+
+    #searchInput::placeholder {
+      color: $texte;
+    }
+
+    .clear-btn {
+      background: none;
+      border: none;
+      color: $texte;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px;
+      display: none;
+      transition: color 0.2s;
+    }
+
+    .clear-btn:hover {
+      color: #667eea;
+    }
+  }
+  .search-wrapper:focus-within {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .results-container {
+    margin-top: 10px;
+    background: $texte;
+    border-radius: $border;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .results-container.show {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .result-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .result-item:last-child {
+    border-bottom: none;
+  }
+
+  .result-item:hover {
+    background: $texte;
+  }
+
+  .result-title {
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 5px;
+  }
+
+  .result-description {
+    font-size: 14px;
+    color: $fond-card;
+  }
+
+  .no-results {
+    padding: 30px;
+    text-align: center;
+    color: $fond-card;
+  }
+
+  .highlight {
+    background: $btn;
+    font-weight: 600;
+  }
+}
+
+.focus-gallery {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  height: 25rem;
+  align-items: center;
+  gap: 100px;
+  padding: 0 calc(50vw - 150px);
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__item {
+    @include card();
+    flex: 0 0 700px;
+    height: 300px;
+    scroll-snap-align: center;
+    /* Flexbox to center text inside the card */
+    display: flex;
+    /* The View Timeline Animation */
+    animation: pop-in linear both;
+    animation-timeline: view(x);
+
+    &__photo {
+      width: 40%;
+      // margin-right: -300px;
+    }
+    &__photo img {
+      @include photo();
+      width: 68%;
+      margin: 10px;
+      margin-top: 12px;
+    }
+    &__content {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      &__title {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        h2 {
+          @include tangerine-bold();
+          color: $texte;
+          font-size: 40px;
+        }
+      }
+      &__btn {
+        width: 100%;
+        @include btn();
+
+        a {
+          height: 100%;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          color: $white;
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+      &__btn:hover {
+        background-color: $autre;
+      }
+    }
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.5) rotate(-10deg);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+
+  /* Center Point */
+  100% {
+    transform: scale(0.5) rotate(10deg);
+    opacity: 0.3;
+  }
+}
+
+.list-book {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 2rem;
+  &__card {
+    @include card();
+    width: 40%;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &__photo {
+      margin-right: -60px;
+    }
+    &__photo img {
+      @include photo();
+      width: 65%;
+      margin: 10px;
+      margin-bottom: 5px;
+    }
+    &__content {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        h2 {
+          @include tangerine-bold();
+          color: $texte;
+          font-size: xx-large;
+          margin: 5px;
+        }
+      }
+      &__descript {
+        color: $sous-texte;
+        padding: 10px;
+      }
+      &__btn {
+        @include btn();
+        width: 40%;
+        margin-top: 20px;
+        a {
+          height: 100%;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          color: $white;
+        }
+      }
+      &__btn:hover {
+        background-color: $autre;
+      }
+    }
+  }
+}

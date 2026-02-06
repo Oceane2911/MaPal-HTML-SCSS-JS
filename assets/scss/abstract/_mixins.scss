@@ -1,0 +1,35 @@
+@use "./variables" as *;
+
+@mixin typo {
+  font-family: "IM Fell French Canon SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin tangerine-regular {
+  font-family: "Tangerine", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin tangerine-bold {
+  font-family: "Tangerine", cursive;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@mixin card {
+  background-color: $fond-card;
+  border-radius: $border;
+}
+
+@mixin btn{
+  border-radius: $border;
+  background-color: $btn;
+  height: 2rem;
+
+}
+
+@mixin photo{
+  border-radius: $border-book;
+
+}

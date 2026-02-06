@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pages/index.css">
+    <style>
+        /* Styles pour les cœurs */
+        ion-icon[name="heart"].white {
+            color: white !important;
+        }
+        
+        ion-icon[name="heart"].red {
+            color: #EF4444 !important;
+        }
+        
+        ion-icon[name="heart"] {
+            font-size: 24px;
+            transition: color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        
+        ion-icon[name="heart"]:hover {
+            transform: scale(1.1);
+        }
+        
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <title>MA PAL</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="MaPal.html">Ma PAL</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="search-wrapper">
+            <ion-icon name="search-outline"></ion-icon>
+            <input type="text" id="searchInput" placeholder="Rechercher..." autocomplete="off">
+            <button class="clear-btn" id="clearBtn">✕</button>
+        </div>
+        <div class="results-container" id="resultsContainer"></div>
+    </div>
+    <div class="focus-gallery">
+        <div class="focus-gallery__item">
+            <div class="focus-gallery__item__photo"><img src="assets/img/DestinForgeParLeFeu.jpg"
+                    alt="Destin forge par le feu"></div>
+            <div class="focus-gallery__item__content">
+                <div class="focus-gallery__item__content__title">
+                    <h2> Destin Forgé par Le Feu </h2>
+                    <button class="like" >
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <div class="focus-gallery__item__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="focus-gallery__item">
+            <div class="focus-gallery__item__photo"><img src="assets/img/DestinForgeParLeFeu.jpg"
+                    alt="Destin forge par le feu"></div>
+            <div class="focus-gallery__item__content">
+                <div class="focus-gallery__item__content__title">
+                    <h2> Destin Forgé par Le Feu </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <div class="focus-gallery__item__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="focus-gallery__item">
+            <div class="focus-gallery__item__photo"><img src="assets/img/DestinForgeParLeFeu.jpg"
+                    alt="Destin forge par le feu"></div>
+            <div class="focus-gallery__item__content">
+                <div class="focus-gallery__item__content__title">
+                    <h2> Destin Forgé par Le Feu </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <div class="focus-gallery__item__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="focus-gallery__item">
+            <div class="focus-gallery__item__photo"><img src="assets/img/DestinForgeParLeFeu.jpg"
+                    alt="Destin forge par le feu"></div>
+            <div class="focus-gallery__item__content">
+                <div class="focus-gallery__item__content__title">
+                    <h2> Destin Forgé par Le Feu </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <div class="focus-gallery__item__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="focus-gallery__item">
+            <div class="focus-gallery__item__photo"><img src="assets/img/DestinForgeParLeFeu.jpg"
+                    alt="Destin forge par le feu"></div>
+            <div class="focus-gallery__item__content">
+                <div class="focus-gallery__item__content__title">
+                    <h2> Destin Forgé par Le Feu </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <div class="focus-gallery__item__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-book">
+        <div class="list-book__card">
+            <div class="list-book__card__photo"><img src="assets/img/DestinForgeParLeFeu.jpg"
+                    alt="Destin forge par le feu"></div>
+            <div class="list-book__card__content">
+                <div class="list-book__card__content__title">
+                    <h2> Destin Forgé par Le Feu </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <p class="list-book__card__content__descript">Au temps des dragons, les puissantes souveraines du clan
+                    Daercathian régnaient sur Tìr Teine. Mais la matriarchie a dépéri au profit d'une lignée de rois de
+                    plus en plus faibles, pervertie par les préceptes d'une religion oppressive. [...]
+
+                </p>
+                <div class="list-book__card__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="list-book__card">
+            <div class="list-book__card__photo"><img src="assets/img/PromotionFuneste.jpg" alt="Promotion Funestre">
+            </div>
+            <div class="list-book__card__content">
+                <div class="list-book__card__content__title">
+                    <h2> Promotion Funestre </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <p class="list-book__card__content__descript">À la Scholomance, El, Orion et leurs camarades sont enfin
+                    en terminale, année sur laquelle plane le spectre de la remise des diplômes, rite de passage
+                    mortel... au sens propre.El est déterminée : ses amis et elle survivront. [...]
+
+                </p>
+                <div class="list-book__card__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="list-book__card">
+            <div class="list-book__card__photo"><img src="assets/img/Assoiffés.jpg" alt="Assoiffés"></div>
+            <div class="list-book__card__content">
+                <div class="list-book__card__content__title">
+                    <h2> Assoiffés </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <p class="list-book__card__content__descript">Seule mortelle dans une académie fréquentée par des
+                    créatures surnaturelles, comment Grace survivra-t-elle ?
+
+                    Mon monde a basculé le jour où j'ai atterri au lycée Katmere. Me voilà, simple mortelle, au
+                    milieu
+                    de vampires, de loups-garous, et autres êtres surnaturels.[...]
+
+                </p>
+                <div class="list-book__card__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="list-book__card">
+            <div class="list-book__card__photo"><img src="assets/img/AffronterLaNuit.jpg" alt="Affronter la Nuit">
+            </div>
+            <div class="list-book__card__content">
+                <div class="list-book__card__content__title">
+                    <h2> Affronter la Nuit </h2>
+                    <button>
+                        <ion-icon name="heart" class="white"></ion-icon>
+                    </button>
+                </div>
+                <p class="list-book__card__content__descript">Au temps des dragons, les puissantes souveraines du
+                    clan
+                    Daercathian régnaient sur Tìr Teine. Mais la matriarchie a dépéri au profit d'une lignée de rois
+                    de
+                    plus en plus faibles, pervertie par les préceptes d'une religion oppressive. [...]
+
+                </p>
+                <div class="list-book__card__content__btn">
+                    <a href="">
+                        <p>Voir plus</p>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/like.js"></script>
+
+</html>
