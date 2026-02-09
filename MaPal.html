@@ -13,11 +13,19 @@
 
 <body>
     <nav>
-        <ul class="nav">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#">Ma PAL</a></li>
-        </ul>
+        <div class="nav-container">
+            <button class="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="MaPal.html">Ma PAL</a></li>
+            </ul>
+        </div>
     </nav>
+    <div class="nav-overlay"></div>
     <div class="container">
         <div class="search-wrapper">
             <ion-icon name="search-outline"></ion-icon>
@@ -33,4 +41,5 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script src="assets/js/like.js"></script>
 <script src="assets/js/search.js"></script>
+<script src="assets/js/burger.js"></script>
 </html>

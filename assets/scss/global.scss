@@ -18,25 +18,146 @@
 body{
     background-color: $fond;
 }
-nav{
-    @include typo();
-    height: 10rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 1px 1px $x-small $y-small $btn;
-    margin-bottom: 2rem;
-    ul{ 
-        width:100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        list-style: none;
 
-        a{
-            text-decoration: none;
-            color: $btn;
-            font-size: 50px;
-        }
+// Navigation principale avec menu burger
+nav {
+  width: 100%;
+  background-color: $fond-card;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 1px 1px $x-small $y-small $btn;
+  margin-bottom: 2rem;
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+
+  // Menu burger button (visible uniquement sur mobile)
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 1001;
+
+    @include mobile {
+      display: flex;
     }
+
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: $texte;
+      margin: 3px 0;
+      transition: all 0.3s ease;
+      border-radius: 3px;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+
+  // Liste de navigation
+  .nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+
+    @include mobile {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 70%;
+      max-width: 300px;
+      background-color: $fond-card;
+      flex-direction: column;
+      padding: 80px 20px 20px;
+      gap: 1rem;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    @include tablette {
+      gap: 1.5rem;
+    }
+
+    li {
+      margin: 0;
+
+      a {
+        @include typo();
+        font-size: x-large;
+        color: $texte;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: $border;
+        transition: all 0.3s ease;
+        display: block;
+
+        @include mobile {
+          font-size: 20px;
+          padding: 12px 20px;
+          border-bottom: 1px solid rgba(229, 231, 235, 0.1);
+        }
+
+        &:hover {
+          background-color: $autre;
+          color: $white;
+          transform: translateX(5px);
+        }
+
+        &.active {
+          background-color: $btn;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Overlay pour fermer le menu en cliquant à l'extérieur (mobile)
+.nav-overlay {
+  display: none;
+  
+  @include mobile {
+    &.active {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  }
 }
