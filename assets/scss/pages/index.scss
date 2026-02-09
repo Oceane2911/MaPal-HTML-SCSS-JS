@@ -3,17 +3,19 @@
 // Styles pour les icônes de cœur
 ion-icon[name="heart"] {
   font-size: 24px;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
   cursor: pointer;
-  
+
   &.white {
     color: $white;
   }
-  
+
   &.red {
-    color: #EF4444; // Rouge vif
+    color: #ef4444; // Rouge vif
   }
-  
+
   &:hover {
     transform: scale(1.1);
   }
@@ -25,7 +27,7 @@ button {
   border: none;
   padding: 5px;
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
   }
@@ -165,16 +167,32 @@ button {
     /* The View Timeline Animation */
     animation: pop-in linear both;
     animation-timeline: view(x);
-
+    @include mobile {
+      flex: 0 0 350px;
+      height: 400px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     &__photo {
-      width: 40%;
-      // margin-right: -300px;
+      width: 38%;
+      @include mobile {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
     &__photo img {
       @include photo();
       width: 68%;
       margin: 10px;
-      margin-top: 12px;
+      margin-top: 10px;
+      @include mobile {
+        width: 90%;
+        margin: 20px auto;
+        margin-top: 0;
+      }
     }
     &__content {
       display: flex;
@@ -190,11 +208,18 @@ button {
           @include tangerine-bold();
           color: $texte;
           font-size: 40px;
+          @include mobile {
+            font-size: 30px;
+          }
         }
       }
       &__btn {
         width: 100%;
         @include btn();
+        @include mobile {
+          width: 90%;
+          margin: 10px;
+        }
 
         a {
           height: 100%;
@@ -242,6 +267,12 @@ button {
   flex-wrap: wrap;
   padding: 20px;
   gap: 2rem;
+
+  @include mobile {
+    padding: 10px;
+    gap: 1rem;
+  }
+
   &__card {
     @include card();
     width: 40%;
@@ -250,40 +281,112 @@ button {
     align-items: center;
     gap: 12px;
 
+    @include mobile {
+      width: 100%;
+      height: auto;
+      min-height: 180px;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    @include tablette {
+      width: 45%;
+      height: 14rem;
+    }
+
     &__photo {
       margin-right: -60px;
+
+      @include mobile {
+        margin-right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
     }
     &__photo img {
       @include photo();
       width: 65%;
       margin: 10px;
       margin-bottom: 5px;
+
+      @include mobile {
+        width: 40%;
+        margin: 10px auto;
+      }
+
+      @include tablette {
+        width: 70%;
+      }
     }
     &__content {
       display: flex;
       justify-content: space-around;
       flex-direction: column;
       align-items: center;
+
+      @include mobile {
+        width: 100%;
+        gap: 10px;
+      }
+
       &__title {
         display: flex;
         align-items: center;
         justify-content: space-around;
+
+        @include mobile {
+          width: 100%;
+          justify-content: center;
+          gap: 1rem;
+        }
 
         h2 {
           @include tangerine-bold();
           color: $texte;
           font-size: xx-large;
           margin: 5px;
+
+          @include mobile {
+            font-size: xx-large;
+            text-align: center;
+          }
+
+          @include tablette {
+            font-size: large;
+          }
         }
       }
       &__descript {
         color: $sous-texte;
         padding: 10px;
+
+        @include mobile {
+          font-size: 14px;
+          text-align: center;
+          padding: 5px 10px;
+        }
+
+        @include tablette {
+          font-size: 13px;
+          padding: 20px;
+        }
       }
       &__btn {
         @include btn();
         width: 40%;
         margin-top: 20px;
+
+        @include mobile {
+          width: 60%;
+          margin-top: 10px;
+        }
+
+        @include tablette {
+          width: 60%;
+          margin-top: 2px;
+        }
+
         a {
           height: 100%;
           text-decoration: none;
@@ -292,6 +395,11 @@ button {
           justify-content: center;
           gap: 20px;
           color: $white;
+
+          @include mobile {
+            gap: 10px;
+            font-size: 12px;
+          }
         }
       }
       &__btn:hover {
